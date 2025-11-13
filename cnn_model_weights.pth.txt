@@ -1,0 +1,8 @@
+
+# Save weights only
+torch.save(model.state_dict(), 'cnn_model_weights.pth')
+
+# Load weights into new model instance
+loaded_model = MyCNNModel()
+loaded_model.load_state_dict(torch.load('cnn_model_weights.pth'))
+loaded_model.eval()
